@@ -75,6 +75,18 @@ def addScreen():
 	print("Press ENTER to return to the main menu.\n")
 	item = input("\nItem: ")
 	if len(item) > 0:
+		def searchItem(item):
+			for i, listItem in enumerate(sl):
+				if listItem == item:
+					return i
+				return -1
+
+
+		index = searchItem("item_to_search_for")
+		if index != -1:
+    			print("Item found at index:", index)
+		else:
+    			print("Item not found")
 		sl.append(item)
 		print("Item added :-)")
 		saveList()
